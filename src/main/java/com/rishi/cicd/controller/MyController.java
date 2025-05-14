@@ -6,9 +6,14 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MyController {
 
-    @GetMapping("/hello")
+    @GetMapping("/")
+    public String index() {
+        return "redirect:/home";
+    }
+
+    @GetMapping("/home")
     public String getHello() {
-        System.out.println("Hello World");
-        return "hello"; // This will map to hello.html in /templates
+        System.out.println("Home page is loaded..........");
+        return "home"; // This will map to home.html in /templates
     }
 }
